@@ -4,5 +4,5 @@ SecurityEvent
     LockedOutAccount = TargetUserName,
     Computer = TargetDomainName,
     Domain = SubjectDomainName,
-    DomainController = Computer
-| project TimeGenerated, LockedOutAccount, Domain, CallerComputer, DomainController
+    DomainController = SubjectUserName
+| project TimeGenerated, LockedOutAccount, Domain, Computer, DomainController
