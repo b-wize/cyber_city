@@ -1,4 +1,4 @@
 DeviceProcessEvents
-|where InitiatingProcessFileName //sub out process file name as variable
+|where InitiatingProcessFileName contains ""//sub out process file name as variable
 |summarize InitiatingProcessFileName = make_set(InitiatingProcessFileName) by TimeGenerated, InitiatingProcessAccountUpn
 |project TimeGenerated, InitiatingProcessAccountUpn, InitiatingProcessFileName = strcat_array(InitiatingProcessFileName, ", ")
