@@ -1,1 +1,0 @@
-A quick checklist I put together for gathering key information before beginning a threat model. This works well for manual as well as AI assisted assessments, as a seasoned professional can use this to begin research on a platform/tool/application, or this can be fed into a well trained model to assist with the modeling to fill in the gaps.
