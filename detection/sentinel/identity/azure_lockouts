@@ -1,0 +1,11 @@
+SigninLogs
+| where ResultDescription contains "locked"
+| where isnotempty(UserPrincipalName)
+| extend
+    Username = UserPrincipalName,
+    Workstation = tostring(DeviceDetail.displayName),
+    ErrorCode = ResultType,
+    FailureReason = ResultDescription,
+    City = tostring(LocationDetails.city),
+    Country = tostring(LocationDetails.countryOrRegion)
+| project TimeGenerated, Username, Workstation, ErrorCode, FailureReason, City, Country
