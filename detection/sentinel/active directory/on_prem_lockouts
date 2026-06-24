@@ -1,0 +1,8 @@
+SecurityEvent
+| where EventID == 4740
+| extend
+    LockedOutAccount = TargetUserName,
+    Domain = TargetDomainName,
+    CallerComputer = extract(@'TargetInfo">([^<]+)', 1, EventData), //PC where the lockout originated
+    DomainController = Computer
+| project TimeGenerated, LockedOutAccount, Domain, CallerComputer, DomainController
