@@ -4,7 +4,7 @@ $username = Read-host -prompt 'Enter the user to look for'
 
 $searchuser = "*$username*"
 
-Foreach ($domain in $domais)
+Foreach ($domain in $domains)
 {
     try {
 
