@@ -1,0 +1,7 @@
+SecurityEvent
+| where EventID in (4729, 4733, 4746, 4757)
+| extend
+    Remover = SubjectUserName,
+    RemovedUser = extract(@'MemberName">([^<]+)', 1, EventData),
+    Group = TargetUserName
+| project TimeGenerated, Remover, RemovedUser, Group, EventID
