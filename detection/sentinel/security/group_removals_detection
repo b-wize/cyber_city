@@ -3,5 +3,5 @@ SecurityEvent
 | extend
     Remover = SubjectUserName,
     RemovedUser = extract(@'MemberName">([^<]+)', 1, EventData),
-    Group = TargetUserName
+    Group = tostring(split(TargetUserName, "\\")[1])
 | project TimeGenerated, Remover, RemovedUser, Group, EventID
