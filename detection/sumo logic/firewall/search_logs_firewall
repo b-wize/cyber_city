@@ -1,1 +1,2 @@
-_source= //input name of log source here
+_source= *palo* _dataTier=all //input name of log source here, can also cast a wide net by using and statements to filter by user name, url, or blocks
+//ex  _source= *palo* _dataTier=all and "%username%" and "blocked"
