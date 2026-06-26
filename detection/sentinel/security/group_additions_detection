@@ -1,0 +1,7 @@
+SecurityEvent
+| where EventID in (4728, 4732, 4745, 4756)
+| extend
+    Adder = SubjectUserName,
+    AddedUser = extract(@'MemberName">([^<]+)', 1, EventData),
+    Group = tostring(split(TargetUserName, "\\")[1])
+| project TimeGenerated, Adder, AddedUser, Group, EventID
