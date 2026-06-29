@@ -1,0 +1,8 @@
+DeviceProcessEvents
+| where (FileName in~ ("pip.exe", "pip3.exe") and ProcessCommandLine contains "install")
+    or ProcessCommandLine has_all ("python", "-m", "pip", "install")
+| extend
+    User = AccountName,
+    Domain = AccountDomain,
+    PCName = DeviceName
+| project TimeGenerated, User, Domain, PCName, ProcessCommandLine
