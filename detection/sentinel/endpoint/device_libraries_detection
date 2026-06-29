@@ -5,4 +5,5 @@ DeviceProcessEvents
     User = AccountName,
     Domain = AccountDomain,
     PCName = DeviceName
-| project TimeGenerated, User, Domain, PCName, ProcessCommandLine
+| extend Library = extract(@'install\s+([\S]+)', 1, ProcessCommandLine)
+| project TimeGenerated, User, Domain, PCName, Library, ProcessCommandLine
