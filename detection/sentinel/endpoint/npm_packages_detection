@@ -1,10 +1,10 @@
 DeviceProcessEvents
-| where FileName in~ ("npm.cmd", "npm.exe", "npm")
+|where FileName in~ ("npm.cmd", "npm.exe", "npm")
     and ProcessCommandLine contains "install"
-| extend
+|extend
     User = AccountName,
     Domain = AccountDomain,
     PCName = DeviceName,
     Package = extract(@'install\s+(?:-g\s+)?([\S]+)', 1, ProcessCommandLine),
     GlobalInstall = iff(ProcessCommandLine contains " -g " or ProcessCommandLine contains " --global ", true, false)
-| project TimeGenerated, User, Domain, PCName, Package, GlobalInstall, ProcessCommandLine
+|project TimeGenerated, User, Domain, PCName, Package, GlobalInstall, ProcessCommandLine

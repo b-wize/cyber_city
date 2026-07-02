@@ -1,9 +1,9 @@
 DeviceProcessEvents
-| where FileName in~ ("powershell.exe", "pwsh.exe")
+|where FileName in~ ("powershell.exe", "pwsh.exe")
     and ProcessCommandLine contains "Install-Module"
-| extend
+|extend
     User = AccountName,
     Domain = AccountDomain,
     PCName = DeviceName,
     Module = extract(@'Install-Module\s+(?:-Name\s+)?([\S]+)', 1, ProcessCommandLine)
-| project TimeGenerated, User, Domain, PCName, Module, ProcessCommandLine
+|project TimeGenerated, User, Domain, PCName, Module, ProcessCommandLine

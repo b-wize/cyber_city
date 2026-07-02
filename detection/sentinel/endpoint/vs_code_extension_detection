@@ -1,9 +1,9 @@
 DeviceProcessEvents
-| where FileName in~ ("code.exe", "code")
+|where FileName in~ ("code.exe", "code")
     and ProcessCommandLine contains "--install-extension"
-| extend
+|extend
     User = AccountName,
     Domain = AccountDomain,
     PCName = DeviceName,
     Extension = extract(@'--install-extension\s+([\S]+)', 1, ProcessCommandLine)
-| project TimeGenerated, User, Domain, PCName, Extension, ProcessCommandLine
+|project TimeGenerated, User, Domain, PCName, Extension, ProcessCommandLine
