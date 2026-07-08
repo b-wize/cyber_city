@@ -24,18 +24,18 @@ detection:
         Image|endswith:
             - '\pip.exe'
             - '\pip3.exe'
-        CommandLine|contains: 'install'
+        CommandLine|contains: ' install'
     selection_python_pip:
         Image|endswith: '\python.exe'
         CommandLine|contains|all:
             - '-m'
             - 'pip'
-            - 'install'
+            - ' install'
     selection_npm:
         Image|endswith:
             - '\npm.cmd'
             - '\npm.exe'
-        CommandLine|contains: 'install'
+        CommandLine|contains: ' install'
     selection_powershell:
         Image|endswith:
             - '\powershell.exe'
@@ -44,11 +44,11 @@ detection:
     selection_chocolatey:
         Image|endswith:
             - '\choco.exe'
-        CommandLine|contains: ' install '
+        CommandLine|contains: ' install'
     selection_winget:
         Image|endswith:
             - '\winget.exe'
-        CommandLine|contains: ' install '
+        CommandLine|contains: ' install'
 
     condition: 1 of selection_*
 falsepositives:
