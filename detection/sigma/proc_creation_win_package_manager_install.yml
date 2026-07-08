@@ -44,11 +44,11 @@ detection:
     selection_chocolatey:
         Image|endswith:
             - '\choco.exe'
-        CommandLine|contains: 'install'
+        CommandLine|contains: ' install '
     selection_winget:
         Image|endswith:
             - '\winget.exe'
-        CommandLine|contains: 'install'
+        CommandLine|contains: ' install '
 
     condition: 1 of selection_*
 falsepositives:
