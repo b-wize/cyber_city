@@ -3,14 +3,14 @@ id: 3b4c5d6e-7f8a-4b9c-ad1e-2f3a4b5c6d7e
 status: experimental
 description: |
     Detects software package installations via common package managers including
-    pip (Python), npm (Node.js), Chocolatey (choco), and PowerShell's Install-Module cmdlet. May indicate
+    pip (Python), npm (Node.js), Chocolatey, Winget, and PowerShell's Install-Module cmdlet. May indicate
     unauthorized software installation, dependency confusion attacks, or staging of
     malicious tooling on an endpoint.
 references:
     - https://attack.mitre.org/techniques/T1059/001/
     - https://attack.mitre.org/techniques/T1059/003/
     - https://owasp.org/www-project-top-ten/
-author: b-wize
+author: Anthony Riojas
 date: 2026/07/07
 tags:
     - attack.execution
