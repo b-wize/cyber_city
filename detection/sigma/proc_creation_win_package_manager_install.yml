@@ -7,15 +7,14 @@ description: |
     unauthorized software installation, dependency confusion attacks, or staging of
     malicious tooling on an endpoint.
 references:
-    - https://attack.mitre.org/techniques/T1059/001/
-    - https://attack.mitre.org/techniques/T1059/003/
+    - https://attack.mitre.org/techniques/T1195/001/
     - https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
 author: Anthony Riojas
 date: 2026/07/07
 tags:
     - attack.execution
-    - attack.t1059.001
-    - attack.t1059.003
+    - attack.initial-access
+    - attack.t1195.001
 logsource:
     category: process_creation
     product: windows
