@@ -1,5 +1,5 @@
 title: Software Package Manager Installation Activity
-id: 3b4c5d6e-7f8a-4b9c-ad1e-2f3a4b5c6d7e
+id: 7c4b4dbd-a4f8-4c51-a9ec-deca1701f2b5
 status: experimental
 description: |
     Detects software package installations via common package managers including
@@ -9,7 +9,7 @@ description: |
 references:
     - https://attack.mitre.org/techniques/T1059/001/
     - https://attack.mitre.org/techniques/T1059/003/
-    - https://owasp.org/www-project-top-ten/
+    - https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
 author: Anthony Riojas
 date: 2026/07/07
 tags:
