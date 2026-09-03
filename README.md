@@ -6,6 +6,7 @@ What's here
 - Sumo Logic Detections — equivalent detection logic for Sumo Logic environments
 - PowerShell Scripts — automation tooling built for real operational use
 - Threat Modeling — a STRIDE-based threat model for generic enterprise IT environments, written to be forked and adapted
+- Security frameworks and process design, including a capability-driven software review framework built to replace manual approval queues with a repeatable, automatable decision model
 
 How to use it\
 Swap the commented table names to match your environment and you're most of the way there. The detections are modular by design utilizing portable logic without major edits regardless of how your environment is structured. If you're using the Sentinel watchlist-based detections, there are notes in the relevant files on how to set those up.
